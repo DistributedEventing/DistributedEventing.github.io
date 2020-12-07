@@ -1,0 +1,118 @@
+
+* {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background-color: snow;
+	font: 14px arial, helvetica, sans-serif;
+	text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 1em;
+}
+
+.table {
+	width: 100%;
+	font-size: inherit;
+	font: 100%;
+	border-collapse: collapse;
+}
+
+.table th,
+.table td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+.table th {
+  background-color: #b3c6ff;
+}
+
+a {
+	color: #6a5acd;
+}
+
+a:visited {
+	color: #800000;
+}
+
+li {
+	margin-top: 1em;
+	margin-left: 1em;
+}
+
+.main {
+	width: 44em;
+	text-align: justify;
+	margin: 4em auto 4em auto;
+	line-height: 1.6em;
+	font-size: 105%;
+	list-style-position: inside;
+}
+
+.banner {
+	border-bottom: 5px solid #e6e3ff;
+	font-size: 220%;
+	font-weight: bold;
+	padding-bottom: 0.4em;
+	margin-bottom: 1.5em;
+  	text-align: center;
+	color: #0000cc;
+}
+
+.footer {
+	width: inherit;
+	border-top: 5px solid #e6e3ff;
+	margin-top: 2em;
+	font-size: 80%;
+	color: #6666ff;
+}
+
+.footer table {
+	width: 100%;
+	font-size: inherit;
+	border-collapse: collapse;
+}
+
+.footer td {
+	border-collapse: collapse;
+}
+
+.absolute {
+	width: inherit;
+	position: absolute;
+	bottom: 10px;
+}
+
+#hlink {
+	text-decoration: none;
+	color: black;
+}
+
+.postlink {
+	margin-right: 2em;
+}
+
+.nmlink {
+	margin-top: 1.15em;
+	margin-left: 0;
+	font-size: 115%;
+	list-style-type: none;
+}
+
+#yearheading {
+	color: #884dff;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}

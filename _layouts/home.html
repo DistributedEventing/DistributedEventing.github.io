@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<div class="banner">
+	Distributed Eventing
+</div>
+
+<div>
+	{% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+	{% for year in postsByYear %}
+		<h2 id="yearheading">{{ year.name }}</h2>
+		<ul>
+			{% for post in year.items %}
+				<li class="nmlink">
+					{%- assign date_format = site.moving.date_format | default: "%B %d" -%}
+					<span class="postlink">
+						{{ post.date | date: date_format }}
+					</span>
+					<a href="{{ post.url }}">{{ post.title }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% endfor %}
+</div>
+
+<div class="absolute">
+	<div class="footer">
+		<table>
+			<td align="left">
+				<a href="https://github.com/DistributedEventing">github.com/DistributedEventing</a>
+			</td>
+			<td align="right">
+				<a href="mailto:distributedeventing@gmail.com">distributedeventing@gmail.com</a>
+			</td>
+		</table>
+	</div>
+</div>
