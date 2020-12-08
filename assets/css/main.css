@@ -14,6 +14,14 @@ body {
 	text-align: center;
 }
 
+h1 {
+	color: #0000cc;
+	border-bottom: 5px solid #e6e3ff;
+	padding-bottom: 0.4em;
+	margin-bottom: 1.5em;
+	text-align: center;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	margin-top: 1em;
 }
@@ -46,6 +54,9 @@ a:visited {
 
 li {
 	margin-top: 1em;
+}
+
+li li {
 	margin-left: 1em;
 }
 
