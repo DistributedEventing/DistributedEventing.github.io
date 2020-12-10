@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Benefits of Event Sourcing"
+category: "eventsourcing"
 ---
 
 ## Fully Asynchronous Reactive System

@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "An Introduction to Event Sourcing"
+category: "eventsourcing"
 ---
 
 Event sourcing is a way of building a distributed system wherein every change to the system is captured as an ordered sequence of events. Events are immutable and are only appended to a log. This log serves as the system of record for the whole distributed system.
@@ -73,10 +74,10 @@ Event sourcing comes in multiple flavors. This article presents you with one of 
 An event mentions a fact about the distributed system. Events usually represent actual actions in the business domain. For example, a financial instrument is available for trading, a shipment is expected at a facility, an order has been received by the system, or a shipment is in transit to another facility. Events are also used to disseminate information about various components of the system. For example, a heartbeat event informs interested parties about the fact that a component is online and fulfilling its duties. 
 
 The data in a distributed system can be classified under two categories:
-* Static data: this is data that changes infrequently. Static data events are emitted by the system to apprise all components within the system of plain facts about the system. For example:
+* **Static data**: this is data that changes infrequently. Static data events are emitted by the system to apprise all components within the system of plain facts about the system. For example:
 	* In an Order Management System you might have InstrumentAdded events wherein each InstrumentAdded event provides information about an instrument that is now available for trading. Per instrument, the event might provide multiple attributes - type of instrument (equity, option, etc.), symbol of the instrument, strike price (if it is an option), etc.
 	* In a Shipment Management System you might have FacilityAdded events wherein each FacilityAdded event provides information about a facility (i.e. a building) that can process a shipment. A FacilityAdded event could provide multiple pieces of information about a facility such as - facility ID, facility name, facility address, etc.
-* Dynamic data: this is data that changes often. Dynamic data events are typically events relating to the entities that the distributed system is managing. For instance:
+* **Dynamic data**: this is data that changes often. Dynamic data events are typically events relating to the entities that the distributed system is managing. For instance:
 	* In an OMS, few types of such events might be:
 		* OrderPending - a client has sent an order that needs to be processed by a component in the system.
 		* OrderAccepted - a pending order has been found to be valid and has been accepted for processing.
@@ -176,10 +177,10 @@ Event sourced systems also distinguish between two modes of message delivery - p
 Any component in an event sourced system that is started in the middle of a session, either for the first time or after a crash (and hopefully after fixing the reason behind crash), needs to start processing events starting at the beginning of the event log. This is called rewinding from the event stream. When the process has seen the latest event on the stream, it is said to have caught up.
 
 A component typically exists in two states:
-* Passive: the component is reading from the event stream and is applying the events to its internal state. It does not send any commands out in this state and if it is supposed to interface with external systems, it will not send messages out to them either. A component in usually in a passive state under two circumstances:
+* **Passive**: the component is reading from the event stream and is applying the events to its internal state. It does not send any commands out in this state and if it is supposed to interface with external systems, it will not send messages out to them either. A component in usually in a passive state under two circumstances:
 	* When it is rewinding from the event stream.
 	* When it acts as a hot standby replica for another component.
-* Active: the component is processing the latest events from the event stream, is sending commands out, and if it is supposed to interface with external systems, it sends messages out to them as well.
+* **Active**: the component is processing the latest events from the event stream, is sending commands out, and if it is supposed to interface with external systems, it sends messages out to them as well.
 
 ## Record and Replay
 

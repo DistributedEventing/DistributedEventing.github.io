@@ -127,3 +127,8 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+
+#rplink {
+	margin-left: 0;
+	list-style-type: none;
+}
